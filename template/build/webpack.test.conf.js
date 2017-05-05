@@ -104,12 +104,11 @@ var webpackConfig = merge(baseWebpackConfig, {
           }
         }
       ]
-    }),
-    {{#if_eq platform "midea"}},
+    }){{#if_eq platform "midea"}},
     // 打压缩包
     new ZipPlugin({
       path: path.join(__dirname, '../'),
-      filename: config.build.zipName,
+      filename: config.buildTest.zipName,
     })
     {{/if_eq}}
   ]
